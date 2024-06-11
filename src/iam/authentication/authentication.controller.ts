@@ -16,7 +16,13 @@ export class AuthenticationController {
     return this.authService.signUp(signUpDto);
   }
 
-  @HttpCode(HttpStatus.OK) // changed since the default is 201
+  @HttpCode(HttpStatus.OK)
+  @Post('sign-in')
+  signIn(@Body() signInDto: SignInDto) {
+    return this.authService.signIn(signInDto);
+  }
+
+  @HttpCode(HttpStatus.OK)
   @Post('refresh-tokens')
   refreshTokens(@Body() refreshTokenDto: RefreshTokenDto) {
     return this.authService.refreshTokens(refreshTokenDto);
