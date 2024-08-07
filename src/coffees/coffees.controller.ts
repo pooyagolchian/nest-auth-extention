@@ -6,7 +6,6 @@ import {
   Patch,
   Param,
   Delete,
-  Req,
 } from '@nestjs/common';
 import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
@@ -17,7 +16,10 @@ import { Roles } from 'src/iam/authorization/decorators/role.decorator';
 import { Role } from 'src/users/enums/role.enum';
 import { Permission } from '../iam/authorization/permission.type';
 import { Permissions } from 'src/iam/authorization/decorators/permission.decorator';
+import { Auth } from 'src/iam/decorators/auth.decorator';
+import { AuthType } from 'src/iam/enums/auth-type.enum';
 
+@Auth(AuthType.Bearer, AuthType.ApiKey)
 @Controller('coffees')
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
