@@ -17,8 +17,8 @@ import {
   InvalidatedRefreshTokenError,
   RefreshTokenIdsStorage,
 } from './refresh-token-ids.storage/refresh-token-ids.storage';
-import { SignUpDto } from './dto/sign-up.dto/sign-up.dto';
-import { SignInDto } from './dto/sign-in.dto/sign-in.dto';
+import { SignUpDto } from './dto/sign-up.dto';
+import { SignInDto } from './dto/sign-in.dto';
 import { ActiveUserData } from '../interfaces/active-user-data.interface';
 
 @Injectable()
